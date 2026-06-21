@@ -43,9 +43,9 @@ graph TD
     Hosting -.->|Serves static assets| UI
     
     %% Styling
-    classDef client fill:#e3f2fd,stroke:#1976d2,stroke-width:2px;
-    classDef cloud fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
-    classDef db fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
+    classDef client fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#333;
+    classDef cloud fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#333;
+    classDef db fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#333;
     
     class UI,State,Logic,I18n client;
     class Hosting cloud;
@@ -132,9 +132,9 @@ graph TD
     App --> SOS[EmergencyAlert.jsx Floating Button]
     
     %% Styling
-    classDef main fill:#ede7f6,stroke:#5e35b1,stroke-width:2px;
-    classDef tab fill:#e0f7fa,stroke:#00838f,stroke-width:2px;
-    classDef comp fill:#fce4ec,stroke:#c2185b,stroke-width:2px;
+    classDef main fill:#ede7f6,stroke:#5e35b1,stroke-width:2px,color:#333;
+    classDef tab fill:#e0f7fa,stroke:#00838f,stroke-width:2px,color:#333;
+    classDef comp fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#333;
     
     class App,Header,MainContext main;
     class Home,Safety,Family tab;
