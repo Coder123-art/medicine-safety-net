@@ -1,0 +1,816 @@
+{
+  "medicines": [
+    {
+      "id": "aspirin",
+      "name": "Aspirin",
+      "hindi": "एस्पिरिन",
+      "dosage": "500mg",
+      "timeSlots": ["08:00", "14:00", "20:00"],
+      "foodConflicts": ["milk", "dairy"],
+      "sideEffects": {
+        "common": "Stomach upset, mild heartburn",
+        "rare": "Severe bleeding, allergic reaction"
+      },
+      "medicines_to_avoid": ["warfarin", "ibuprofen"],
+      "icon": "💊"
+    },
+    {
+      "id": "metformin",
+      "name": "Metformin",
+      "hindi": "मेटफॉर्मिन",
+      "dosage": "500mg",
+      "timeSlots": ["08:00", "14:00", "20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Diarrhea, metallic taste",
+        "rare": "Lactic acidosis"
+      },
+      "medicines_to_avoid": ["contrast dye"],
+      "icon": "💉"
+    },
+    {
+      "id": "amlodipine",
+      "name": "Amlodipine (Blood Pressure)",
+      "hindi": "एमलोडिपाइन",
+      "dosage": "5mg",
+      "timeSlots": ["09:00"],
+      "foodConflicts": ["grapefruit"],
+      "sideEffects": {
+        "common": "Swollen ankles, headache, dizziness",
+        "rare": "Severe allergic reaction"
+      },
+      "medicines_to_avoid": ["simvastatin in high doses"],
+      "icon": "❤️"
+    },
+    {
+      "id": "atorvastatin",
+      "name": "Atorvastatin (Cholesterol)",
+      "hindi": "एटोरवास्टेटिन",
+      "dosage": "10mg",
+      "timeSlots": ["20:00"],
+      "foodConflicts": ["grapefruit"],
+      "sideEffects": {
+        "common": "Muscle pain, fatigue",
+        "rare": "Liver damage, rhabdomyolysis"
+      },
+      "medicines_to_avoid": ["gemfibrozil", "cyclosporine"],
+      "icon": "🧬"
+    },
+    {
+      "id": "lisinopril",
+      "name": "Lisinopril (Blood Pressure)",
+      "hindi": "लिसिनोप्रिल",
+      "dosage": "10mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": ["potassium-rich foods in excess"],
+      "sideEffects": {
+        "common": "Dry cough, dizziness",
+        "rare": "Angioedema, kidney problems"
+      },
+      "medicines_to_avoid": ["potassium supplements", "NSAIDs"],
+      "icon": "🫀"
+    },
+    {
+      "id": "omeprazole",
+      "name": "Omeprazole (Acid Reflux)",
+      "hindi": "ओमेप्राजोल",
+      "dosage": "20mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": ["heavy fatty foods"],
+      "sideEffects": {
+        "common": "Headache, constipation, diarrhea",
+        "rare": "Vitamin B12 deficiency with long-term use"
+      },
+      "medicines_to_avoid": ["clopidogrel"],
+      "icon": "🔥"
+    },
+    {
+      "id": "atorvastatin",
+      "name": "Vitamin D3",
+      "hindi": "विटामिन डी3",
+      "dosage": "1000IU",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "None if taken as directed",
+        "rare": "High calcium levels with overdose"
+      },
+      "medicines_to_avoid": [],
+      "icon": "☀️"
+    },
+    {
+      "id": "calcium",
+      "name": "Calcium + Vitamin D",
+      "hindi": "कैल्शियम + विटामिन डी",
+      "dosage": "1000mg",
+      "timeSlots": ["13:00"],
+      "foodConflicts": ["iron supplements", "tea", "coffee in excess"],
+      "sideEffects": {
+        "common": "Constipation, bloating",
+        "rare": "Kidney stones"
+      },
+      "medicines_to_avoid": ["tetracycline antibiotics", "iron supplements"],
+      "icon": "🦴"
+    },
+    {
+      "id": "levothyroxine",
+      "name": "Levothyroxine (Thyroid)",
+      "hindi": "लेवोथायरॉक्सिन",
+      "dosage": "50mcg",
+      "timeSlots": ["06:00"],
+      "foodConflicts": ["milk", "calcium", "iron", "soy"],
+      "sideEffects": {
+        "common": "Weight loss, anxiety, tremor",
+        "rare": "Heart palpitations"
+      },
+      "medicines_to_avoid": ["calcium supplements within 4 hours", "iron supplements within 4 hours"],
+      "icon": "🦋"
+    },
+    {
+      "id": "metoprolol",
+      "name": "Metoprolol (Heart/BP)",
+      "hindi": "मेटोप्रोलोल",
+      "dosage": "50mg",
+      "timeSlots": ["08:00", "20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Fatigue, dizziness, slow heart rate",
+        "rare": "Severe bradycardia, asthma triggers"
+      },
+      "medicines_to_avoid": ["diltiazem", "verapamil"],
+      "icon": "⏱️"
+    },
+    {
+      "id": "ibuprofen",
+      "name": "Ibuprofen (Pain Relief)",
+      "hindi": "इबुप्रोफेन",
+      "dosage": "400mg",
+      "timeSlots": ["08:00", "14:00", "20:00"],
+      "foodConflicts": ["empty stomach"],
+      "sideEffects": {
+        "common": "Stomach upset, indigestion",
+        "rare": "GI bleeding, kidney damage"
+      },
+      "medicines_to_avoid": ["aspirin", "warfarin", "lisinopril"],
+      "icon": "🩹"
+    },
+    {
+      "id": "vitamin-b12",
+      "name": "Vitamin B12",
+      "hindi": "विटामिन बी12",
+      "dosage": "1000mcg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "None",
+        "rare": "Allergic reactions"
+      },
+      "medicines_to_avoid": [],
+      "icon": "🩸"
+    },
+    {
+      "id": "atenolol",
+      "name": "Atenolol (Blood Pressure)",
+      "hindi": "एटेनोलोल",
+      "dosage": "50mg",
+      "timeSlots": ["09:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Fatigue, cold hands/feet, slow heart rate",
+        "rare": "Severe heart block"
+      },
+      "medicines_to_avoid": ["diltiazem", "verapamil", "clonidine"],
+      "icon": "❄️"
+    },
+    {
+      "id": "furosemide",
+      "name": "Furosemide (Water Pill)",
+      "hindi": "फ्यूरोसेमाइड",
+      "dosage": "40mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": ["licorice"],
+      "sideEffects": {
+        "common": "Increased urination, dizziness, electrolyte loss",
+        "rare": "Severe dehydration, kidney failure"
+      },
+      "medicines_to_avoid": ["NSAIDs", "ACE inhibitors in high doses"],
+      "icon": "💧"
+    },
+    {
+      "id": "warfarin",
+      "name": "Warfarin (Blood Thinner)",
+      "hindi": "वारफारिन",
+      "dosage": "5mg",
+      "timeSlots": ["18:00"],
+      "foodConflicts": ["vitamin K foods like spinach, broccoli in excess"],
+      "sideEffects": {
+        "common": "Easy bruising, nosebleeds",
+        "rare": "Severe bleeding, purple toe syndrome"
+      },
+      "medicines_to_avoid": ["aspirin", "ibuprofen", "antibiotics (many types)"],
+      "icon": "🩸"
+    },
+    {
+      "id": "glibenclamide",
+      "name": "Glibenclamide (Diabetes)",
+      "hindi": "ग्लिबेंक्लामाइड",
+      "dosage": "5mg",
+      "timeSlots": ["08:00", "20:00"],
+      "foodConflicts": ["empty stomach", "alcohol"],
+      "sideEffects": {
+        "common": "Hypoglycemia (low blood sugar), dizziness",
+        "rare": "Severe hypoglycemia requiring hospitalization"
+      },
+      "medicines_to_avoid": ["aspirin", "NSAIDs", "sulfonamides"],
+      "icon": "🩺"
+    },
+    {
+      "id": "glipizide",
+      "name": "Glipizide (Diabetes)",
+      "hindi": "ग्लिपिजाइड",
+      "dosage": "5mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": ["alcohol", "high sugar foods"],
+      "sideEffects": {
+        "common": "Hypoglycemia, headache",
+        "rare": "Severe hypoglycemia, jaundice"
+      },
+      "medicines_to_avoid": ["fluconazole", "isoniazid"],
+      "icon": "💉"
+    },
+    {
+      "id": "pioglitazone",
+      "name": "Pioglitazone (Diabetes)",
+      "hindi": "पियोग्लिटाजोन",
+      "dosage": "15mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Weight gain, fluid retention, headache",
+        "rare": "Heart failure, bone fractures"
+      },
+      "medicines_to_avoid": ["insulin in some cases"],
+      "icon": "🩹"
+    },
+    {
+      "id": "voglibose",
+      "name": "Voglibose (Diabetes)",
+      "hindi": "वोग्लिबोज",
+      "dosage": "0.3mg",
+      "timeSlots": ["08:00", "14:00", "20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Flatulence, diarrhea, stomach pain",
+        "rare": "Liver problems"
+      },
+      "medicines_to_avoid": [],
+      "icon": "🍲"
+    },
+    {
+      "id": "insulin-nph",
+      "name": "Insulin NPH (Diabetes)",
+      "hindi": "इंसुलिन एनपीएच",
+      "dosage": "varies",
+      "timeSlots": ["08:00", "20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Hypoglycemia, injection site reactions",
+        "rare": "Severe hypoglycemia, lipohypertrophy"
+      },
+      "medicines_to_avoid": ["beta-blockers may mask symptoms"],
+      "icon": "💉"
+    },
+    {
+      "id": "ramipril",
+      "name": "Ramipril (Blood Pressure)",
+      "hindi": "रामिप्रिल",
+      "dosage": "2.5mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": ["potassium-rich foods in excess"],
+      "sideEffects": {
+        "common": "Dry cough, fatigue, dizziness",
+        "rare": "Angioedema, kidney damage"
+      },
+      "medicines_to_avoid": ["potassium supplements", "NSAIDs", "lisinopril"],
+      "icon": "🫀"
+    },
+    {
+      "id": "enalapril",
+      "name": "Enalapril (Blood Pressure)",
+      "hindi": "इनालाप्रिल",
+      "dosage": "5mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Dry cough, headache, dizziness",
+        "rare": "Angioedema, hyperkalemia"
+      },
+      "medicines_to_avoid": ["potassium supplements", "NSAIDs"],
+      "icon": "🫀"
+    },
+    {
+      "id": "nifedipine",
+      "name": "Nifedipine (Blood Pressure)",
+      "hindi": "निफेडिपाइन",
+      "dosage": "10mg",
+      "timeSlots": ["08:00", "14:00"],
+      "foodConflicts": ["grapefruit juice"],
+      "sideEffects": {
+        "common": "Headache, flushing, swollen ankles",
+        "rare": "Chest pain, severe allergic reaction"
+      },
+      "medicines_to_avoid": ["beta-blockers may need adjustment"],
+      "icon": "❤️"
+    },
+    {
+      "id": "diltiazem",
+      "name": "Diltiazem (Heart/BP)",
+      "hindi": "डिलटियाज़ेम",
+      "dosage": "60mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Constipation, dizziness, headache",
+        "rare": "Heart block, severe bradycardia"
+      },
+      "medicines_to_avoid": ["beta-blockers", "verapamil"],
+      "icon": "⏱️"
+    },
+    {
+      "id": "verapamil",
+      "name": "Verapamil (Heart/BP)",
+      "hindi": "वेरापामिल",
+      "dosage": "40mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": ["grapefruit"],
+      "sideEffects": {
+        "common": "Constipation, dizziness, fatigue",
+        "rare": "Heart block, severe constipation"
+      },
+      "medicines_to_avoid": ["beta-blockers", "diltiazem"],
+      "icon": "⏱️"
+    },
+    {
+      "id": "spironolactone",
+      "name": "Spironolactone (Water Pill)",
+      "hindi": "स्पाइरोनोलैक्टोन",
+      "dosage": "25mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": ["potassium-rich foods"],
+      "sideEffects": {
+        "common": "Dizziness, headache, increased urination",
+        "rare": "Hyperkalemia, gynecomastia"
+      },
+      "medicines_to_avoid": ["ACE inhibitors", "potassium supplements"],
+      "icon": "💧"
+    },
+    {
+      "id": "hydrochlorothiazide",
+      "name": "Hydrochlorothiazide (Water Pill)",
+      "hindi": "हाइड्रोक्लोरोथियाजाइड",
+      "dosage": "12.5mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Dizziness, electrolyte loss, increased urination",
+        "rare": "Severe dehydration, gout, photosensitivity"
+      },
+      "medicines_to_avoid": ["NSAIDs", "lithium"],
+      "icon": "💧"
+    },
+    {
+      "id": "amlodipine-extended",
+      "name": "Amlodipine Extended Release",
+      "hindi": "एमलोडिपाइन विस्तारित रिलीज",
+      "dosage": "5mg",
+      "timeSlots": ["20:00"],
+      "foodConflicts": ["grapefruit"],
+      "sideEffects": {
+        "common": "Swollen ankles, headache, fatigue",
+        "rare": "Severe allergic reaction"
+      },
+      "medicines_to_avoid": ["simvastatin in high doses"],
+      "icon": "❤️"
+    },
+    {
+      "id": "pravastatin",
+      "name": "Pravastatin (Cholesterol)",
+      "hindi": "प्रवास्टेटिन",
+      "dosage": "10mg",
+      "timeSlots": ["20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Muscle pain, fatigue, headache",
+        "rare": "Rhabdomyolysis, liver damage"
+      },
+      "medicines_to_avoid": ["gemfibrozil", "cyclosporine"],
+      "icon": "🧬"
+    },
+    {
+      "id": "lovastatin",
+      "name": "Lovastatin (Cholesterol)",
+      "hindi": "लोवास्टेटिन",
+      "dosage": "10mg",
+      "timeSlots": ["20:00"],
+      "foodConflicts": ["grapefruit", "red yeast rice"],
+      "sideEffects": {
+        "common": "Muscle pain, fatigue, headache",
+        "rare": "Rhabdomyolysis, liver problems"
+      },
+      "medicines_to_avoid": ["gemfibrozil", "niacin", "cyclosporine"],
+      "icon": "🧬"
+    },
+    {
+      "id": "simvastatin",
+      "name": "Simvastatin (Cholesterol)",
+      "hindi": "सिमवास्टेटिन",
+      "dosage": "10mg",
+      "timeSlots": ["20:00"],
+      "foodConflicts": ["grapefruit"],
+      "sideEffects": {
+        "common": "Muscle pain, fatigue, headache",
+        "rare": "Rhabdomyolysis, kidney damage"
+      },
+      "medicines_to_avoid": ["gemfibrozil", "cyclosporine", "clarithromycin"],
+      "icon": "🧬"
+    },
+    {
+      "id": "rosuvastatin",
+      "name": "Rosuvastatin (Cholesterol)",
+      "hindi": "रोसुवास्टेटिन",
+      "dosage": "5mg",
+      "timeSlots": ["20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Muscle pain, fatigue, headache",
+        "rare": "Rhabdomyolysis, proteinuria"
+      },
+      "medicines_to_avoid": ["gemfibrozil", "cyclosporine"],
+      "icon": "🧬"
+    },
+    {
+      "id": "cimetidine",
+      "name": "Cimetidine (Acid Reflux)",
+      "hindi": "सिमेटिडाइन",
+      "dosage": "400mg",
+      "timeSlots": ["08:00", "20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Headache, dizziness, constipation",
+        "rare": "Gynecomastia, confusion"
+      },
+      "medicines_to_avoid": ["many drugs - check with pharmacist"],
+      "icon": "🔥"
+    },
+    {
+      "id": "ranitidine",
+      "name": "Ranitidine (Acid Reflux)",
+      "hindi": "रैनिटिडाइन",
+      "dosage": "150mg",
+      "timeSlots": ["08:00", "20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Headache, dizziness, constipation",
+        "rare": "Severe allergic reaction"
+      },
+      "medicines_to_avoid": [],
+      "icon": "🔥"
+    },
+    {
+      "id": "pantoprazole",
+      "name": "Pantoprazole (Acid Reflux)",
+      "hindi": "पैंटोप्राजोल",
+      "dosage": "40mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Headache, diarrhea, constipation",
+        "rare": "Vitamin B12 deficiency with long-term use"
+      },
+      "medicines_to_avoid": ["clopidogrel"],
+      "icon": "🔥"
+    },
+    {
+      "id": "lansoprazole",
+      "name": "Lansoprazole (Acid Reflux)",
+      "hindi": "लैंसोप्राजोल",
+      "dosage": "15mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Headache, diarrhea, constipation",
+        "rare": "C. difficile infection, fractures with long-term use"
+      },
+      "medicines_to_avoid": ["clopidogrel"],
+      "icon": "🔥"
+    },
+    {
+      "id": "esomeprazole",
+      "name": "Esomeprazole (Acid Reflux)",
+      "hindi": "इसोमेप्राजोल",
+      "dosage": "20mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Headache, diarrhea, constipation",
+        "rare": "Vitamin B12 deficiency, magnesium deficiency"
+      },
+      "medicines_to_avoid": ["clopidogrel", "digoxin"],
+      "icon": "🔥"
+    },
+    {
+      "id": "thyroxine-t4",
+      "name": "Thyroxine T4 (Thyroid)",
+      "hindi": "थायरोक्सिन टी4",
+      "dosage": "75mcg",
+      "timeSlots": ["06:00"],
+      "foodConflicts": ["milk", "calcium", "iron", "soy"],
+      "sideEffects": {
+        "common": "Tremor, anxiety, weight loss",
+        "rare": "Heart palpitations, atrial fibrillation"
+      },
+      "medicines_to_avoid": ["calcium supplements within 4 hours", "iron supplements within 4 hours"],
+      "icon": "🦋"
+    },
+    {
+      "id": "amiodarone",
+      "name": "Amiodarone (Heart)",
+      "hindi": "एमियोडेरोन",
+      "dosage": "200mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": ["grapefruit"],
+      "sideEffects": {
+        "common": "Photosensitivity, blue-gray skin discoloration",
+        "rare": "Serious heart rhythm problems, thyroid dysfunction"
+      },
+      "medicines_to_avoid": ["beta-blockers may need adjustment", "warfarin"],
+      "icon": "⏱️"
+    },
+    {
+      "id": "digoxin",
+      "name": "Digoxin (Heart)",
+      "hindi": "डिगॉक्सिन",
+      "dosage": "0.25mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": ["high-fiber foods may reduce absorption"],
+      "sideEffects": {
+        "common": "Nausea, visual disturbances, weakness",
+        "rare": "Heart rhythm problems, severe toxicity"
+      },
+      "medicines_to_avoid": ["verapamil", "amiodarone", "quinidine"],
+      "icon": "❤️"
+    },
+    {
+      "id": "aspirin-clopidogrel",
+      "name": "Aspirin + Clopidogrel (Blood Thinner Combo)",
+      "hindi": "एस्पिरिन + क्लोपिडोग्रेल",
+      "dosage": "75mg + 75mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Easy bruising, nosebleeds, GI upset",
+        "rare": "Severe bleeding, thrombotic thrombocytopenic purpura"
+      },
+      "medicines_to_avoid": ["warfarin", "NSAIDs in excess"],
+      "icon": "🩸"
+    },
+    {
+      "id": "allopurinol",
+      "name": "Allopurinol (Gout)",
+      "hindi": "एलोप्यूरिनॉल",
+      "dosage": "300mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Rash, headache, drowsiness",
+        "rare": "Stevens-Johnson syndrome, severe liver/kidney problems"
+      },
+      "medicines_to_avoid": ["azathioprine", "mercaptopurine"],
+      "icon": "🦵"
+    },
+    {
+      "id": "colchicine",
+      "name": "Colchicine (Gout)",
+      "hindi": "कॉल्चिसिन",
+      "dosage": "0.5mg",
+      "timeSlots": ["12:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Diarrhea, nausea, abdominal pain",
+        "rare": "Bone marrow suppression, peripheral neuropathy"
+      },
+      "medicines_to_avoid": ["NSAIDs", "nephrotoxic drugs"],
+      "icon": "🦵"
+    },
+    {
+      "id": "donepezil",
+      "name": "Donepezil (Alzheimer's)",
+      "hindi": "डोनेपेजिल",
+      "dosage": "5mg",
+      "timeSlots": ["20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Nausea, diarrhea, insomnia",
+        "rare": "Syncope, GI bleeding, bradycardia"
+      },
+      "medicines_to_avoid": ["anticholinergic drugs"],
+      "icon": "🧠"
+    },
+    {
+      "id": "rivastigmine",
+      "name": "Rivastigmine (Alzheimer's)",
+      "hindi": "रिवास्टिग्मिन",
+      "dosage": "1.5mg",
+      "timeSlots": ["08:00", "20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Nausea, vomiting, diarrhea, dizziness",
+        "rare": "Severe GI bleeding, syncope"
+      },
+      "medicines_to_avoid": ["NSAIDs in excess"],
+      "icon": "🧠"
+    },
+    {
+      "id": "galantamine",
+      "name": "Galantamine (Alzheimer's)",
+      "hindi": "गैलेंटामिन",
+      "dosage": "8mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Nausea, vomiting, diarrhea, dizziness",
+        "rare": "Syncope, bradycardia, GI bleeding"
+      },
+      "medicines_to_avoid": ["anticholinergic drugs", "beta-blockers"],
+      "icon": "🧠"
+    },
+    {
+      "id": "sertraline",
+      "name": "Sertraline (Depression/Anxiety)",
+      "hindi": "सर्ट्रालाइन",
+      "dosage": "50mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Sexual dysfunction, insomnia, headache, nausea",
+        "rare": "Serotonin syndrome, severe bleeding, seizures"
+      },
+      "medicines_to_avoid": ["MAOIs", "linezolid", "tramadol"],
+      "icon": "🧠"
+    },
+    {
+      "id": "paroxetine",
+      "name": "Paroxetine (Depression/Anxiety)",
+      "hindi": "पेरॉक्सेटीन",
+      "dosage": "20mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Sexual dysfunction, insomnia, headache, tremor",
+        "rare": "Serotonin syndrome, severe withdrawal, birth defects"
+      },
+      "medicines_to_avoid": ["MAOIs", "linezolid", "tramadol"],
+      "icon": "🧠"
+    },
+    {
+      "id": "fluoxetine",
+      "name": "Fluoxetine (Depression/Anxiety)",
+      "hindi": "फ्लूऑक्सेटाइन",
+      "dosage": "20mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Sexual dysfunction, insomnia, headache, nervousness",
+        "rare": "Serotonin syndrome, severe bleeding, seizures"
+      },
+      "medicines_to_avoid": ["MAOIs", "linezolid", "tramadol"],
+      "icon": "🧠"
+    },
+    {
+      "id": "citalopram",
+      "name": "Citalopram (Depression/Anxiety)",
+      "hindi": "सिटालोप्राम",
+      "dosage": "20mg",
+      "timeSlots": ["08:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Sexual dysfunction, insomnia, headache, tremor",
+        "rare": "Serotonin syndrome, QT prolongation, seizures"
+      },
+      "medicines_to_avoid": ["MAOIs", "linezolid", "tramadol"],
+      "icon": "🧠"
+    },
+    {
+      "id": "amitriptyline",
+      "name": "Amitriptyline (Depression/Pain)",
+      "hindi": "एमिट्रिप्टिलिन",
+      "dosage": "25mg",
+      "timeSlots": ["20:00"],
+      "foodConflicts": ["alcohol"],
+      "sideEffects": {
+        "common": "Drowsiness, dry mouth, constipation, weight gain",
+        "rare": "Heart rhythm problems, severe allergic reaction"
+      },
+      "medicines_to_avoid": ["MAOIs", "anticholinergics in excess"],
+      "icon": "🧠"
+    },
+    {
+      "id": "tramadol",
+      "name": "Tramadol (Pain)",
+      "hindi": "ट्रामाडोल",
+      "dosage": "50mg",
+      "timeSlots": ["08:00", "14:00", "20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Dizziness, nausea, headache, constipation",
+        "rare": "Seizures, serotonin syndrome, respiratory depression"
+      },
+      "medicines_to_avoid": ["SSRIs", "MAOIs", "alcohol"],
+      "icon": "🩹"
+    },
+    {
+      "id": "paracetamol",
+      "name": "Paracetamol / Acetaminophen (Pain)",
+      "hindi": "पेरासिटामोल",
+      "dosage": "500mg",
+      "timeSlots": ["08:00", "14:00", "20:00"],
+      "foodConflicts": [],
+      "sideEffects": {
+        "common": "Rare side effects when used as directed",
+        "rare": "Liver damage with overdose, severe allergic reaction"
+      },
+      "medicines_to_avoid": ["alcohol in excess"],
+      "icon": "💊"
+    },
+    {
+      "id": "naproxen",
+      "name": "Naproxen (Pain/Inflammation)",
+      "hindi": "नेप्रोक्सन",
+      "dosage": "250mg",
+      "timeSlots": ["08:00", "20:00"],
+      "foodConflicts": ["empty stomach not recommended"],
+      "sideEffects": {
+        "common": "Stomach upset, indigestion, headache",
+        "rare": "GI bleeding, kidney damage, allergic reaction"
+      },
+      "medicines_to_avoid": ["aspirin", "warfarin", "ACE inhibitors"],
+      "icon": "🩹"
+    }
+  ],
+  "foodDatabase": {
+    "high_iron": ["spinach", "red meat", "beans", "fortified cereals"],
+    "high_potassium": ["banana", "orange", "potato", "tomato", "spinach"],
+    "high_calcium": ["milk", "yogurt", "cheese", "almonds"],
+    "high_vitamin_k": ["spinach", "broccoli", "kale", "cabbage"],
+    "dairy": ["milk", "yogurt", "cheese", "butter"],
+    "grapefruit": ["grapefruit", "grapefruit juice"],
+    "licorice": ["licorice root"]
+  },
+  "sideEffectGuide": {
+    "stomach_upset": {
+      "description": "Mild stomach discomfort or indigestion",
+      "severity": "low",
+      "action": "Eat with food. Contact doctor if persists > 2 days."
+    },
+    "dizziness": {
+      "description": "Feeling lightheaded or faint",
+      "severity": "medium",
+      "action": "Sit down. Drink water. If severe, contact doctor."
+    },
+    "headache": {
+      "description": "Pain in head or temples",
+      "severity": "low",
+      "action": "Rest in quiet place. Drink water. Contact doctor if worsens."
+    },
+    "dry_cough": {
+      "description": "Persistent dry cough",
+      "severity": "low",
+      "action": "This is common with blood pressure medications. Contact doctor if bothersome."
+    },
+    "muscle_pain": {
+      "description": "Aching or soreness in muscles",
+      "severity": "medium",
+      "action": "Rest affected area. Contact doctor if severe."
+    },
+    "severe_bleeding": {
+      "description": "Unusual or heavy bleeding",
+      "severity": "critical",
+      "action": "CALL AMBULANCE/DOCTOR IMMEDIATELY"
+    },
+    "chest_pain": {
+      "description": "Pain or pressure in chest",
+      "severity": "critical",
+      "action": "CALL AMBULANCE/DOCTOR IMMEDIATELY"
+    },
+    "difficulty_breathing": {
+      "description": "Shortness of breath",
+      "severity": "critical",
+      "action": "CALL AMBULANCE/DOCTOR IMMEDIATELY"
+    },
+    "severe_allergic_reaction": {
+      "description": "Swelling of face, lips, tongue; difficulty breathing",
+      "severity": "critical",
+      "action": "CALL AMBULANCE/DOCTOR IMMEDIATELY"
+    }
+  }
+}

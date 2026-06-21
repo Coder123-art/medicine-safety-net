@@ -1,0 +1,531 @@
+/* EmergencyAlert.css */
+
+.emergency-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 16px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.emergency-modal {
+  background: white;
+  border-radius: 24px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.emergency-modal.sent-modal {
+  animation: scaleUp 0.4s ease;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background: #d0d0d0;
+}
+
+.emergency-content {
+  padding: 32px 24px;
+}
+
+.emergency-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.emergency-header h2 {
+  font-size: 32px;
+  color: #f44336;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.emergency-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+/* Symptoms List */
+.symptoms-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.symptom-btn {
+  background: white;
+  color: #333;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.symptom-btn:hover {
+  border-color: #f44336;
+  background: #fff5f5;
+}
+
+.symptom-btn.selected {
+  background: #f44336;
+  color: white;
+  border-color: #f44336;
+}
+
+.symptom-btn.critical.selected {
+  background: #c62828;
+  border-color: #c62828;
+  box-shadow: 0 0 12px rgba(198, 40, 40, 0.3);
+}
+
+.symptom-btn.high.selected {
+  background: #f44336;
+  border-color: #f44336;
+}
+
+.symptom-btn.medium.selected {
+  background: #ff9800;
+  border-color: #ff9800;
+}
+
+.symptom-btn.low.selected {
+  background: #ffc107;
+  border-color: #ffc107;
+  color: #333;
+}
+
+.symptom-check {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.symptom-label {
+  flex: 1;
+}
+
+/* Custom Symptom Input */
+.custom-symptom {
+  margin-bottom: 16px;
+}
+
+.custom-symptom input {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  color: #333;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.custom-symptom input:focus {
+  outline: none;
+  border-color: #f44336;
+}
+
+/* Symptoms Selected Count */
+.symptoms-selected {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.selected-count {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Confirm Sections */
+.confirm-section {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.confirm-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.location-info {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+}
+
+.location-info.warning {
+  border-left-color: #ff9800;
+  background: #fff8f0;
+}
+
+.location-info p {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #333;
+  font-weight: 500;
+}
+
+.small-text {
+  font-size: 12px;
+  color: #999;
+  font-weight: 400;
+}
+
+/* Symptoms Summary */
+.symptoms-summary,
+.medicines-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.symptom-tag,
+.med-tag {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.symptom-tag.critical {
+  background: #ffebee;
+  border-color: #c62828;
+  color: #b71c1c;
+}
+
+.symptom-tag.high {
+  background: #fff5f5;
+  border-color: #f44336;
+  color: #f44336;
+}
+
+.symptom-tag.medium {
+  background: #fff3e0;
+  border-color: #ff9800;
+  color: #e65100;
+}
+
+.symptom-tag.low {
+  background: #fffde7;
+  border-color: #fbc02d;
+  color: #f57f17;
+}
+
+.symptom-tag.custom {
+  background: #f0f2ff;
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.med-tag {
+  background: #e8f5e9;
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+/* Contacts List */
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-item {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.contact-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.contact-phone {
+  font-size: 13px;
+  margin: 0 0 2px 0;
+  color: #666;
+  font-family: monospace;
+}
+
+.contact-relation {
+  font-size: 12px;
+  margin: 0;
+  color: #999;
+  font-style: italic;
+}
+
+/* Text Utilities */
+.text-muted,
+.text-warning {
+  font-size: 14px;
+  margin: 0;
+  color: #999;
+}
+
+.text-warning {
+  color: #ff9800;
+  font-weight: 500;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 56px;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 3px solid #ffd700;
+  outline-offset: 2px;
+}
+
+.btn-emergency {
+  background: linear-gradient(135deg, #f44336 0%, #c62828 100%);
+  color: white;
+  font-size: 18px;
+}
+
+.btn-emergency:hover:not(:disabled) {
+  box-shadow: 0 8px 20px rgba(244, 67, 54, 0.3);
+  transform: scale(1.02);
+}
+
+.btn-emergency:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  background: #f44336;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #c62828;
+  box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
+}
+
+.btn-danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: #d0d0d0;
+}
+
+.btn-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Success State */
+.success-animation {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.check-mark {
+  font-size: 80px;
+  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.emergency-modal.sent-modal h2 {
+  font-size: 28px;
+  color: #4caf50;
+  margin-bottom: 8px;
+}
+
+.emergency-modal.sent-modal p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 16px 0;
+}
+
+.sent-info {
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.sent-info p {
+  font-size: 14px;
+  margin: 8px 0;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+.countdown {
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .emergency-content {
+    padding: 24px 16px;
+  }
+
+  .emergency-header h2 {
+    font-size: 24px;
+  }
+
+  .symptoms-list {
+    grid-template-columns: 1fr;
+  }
+
+  .symptom-btn {
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .modal-close-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
+/* Scrollbar */
+.emergency-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.emergency-modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.emergency-modal::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.emergency-modal::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

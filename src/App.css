@@ -1,0 +1,443 @@
+/* App.css - Main application layout */
+
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --danger-color: #f44336;
+  --text-dark: #333;
+  --text-light: #666;
+  --bg-light: #f9f9f9;
+  --border-radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* Header */
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  flex: 1;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.demo-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 50px;
+}
+
+.demo-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.demo-btn:active {
+  transform: scale(0.95);
+}
+
+.lang-toggle {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 60px;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.lang-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  padding: 24px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Medicines Section */
+.medicines-section {
+  margin-bottom: 40px;
+}
+
+.medicines-section.completed {
+  opacity: 0.8;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.medicines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.medicines-grid > div {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.medicines-grid > div:hover {
+  transform: scale(1.02);
+}
+
+/* Empty State */
+.empty-state,
+.all-done {
+  text-align: center;
+  padding: 60px 24px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+}
+
+.empty-icon,
+.done-icon {
+  font-size: 80px;
+  margin-bottom: 16px;
+}
+
+.empty-text,
+.done-text {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+.all-done {
+  background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+}
+
+.all-done .done-text {
+  color: #1b5e20;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.reset-btn {
+  background: white;
+  color: #1b5e20;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Emergency Button */
+.emergency-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #f44336 0%, #c62828 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
+  transition: all 0.2s ease;
+  z-index: 500;
+  min-width: 200px;
+  touch-action: manipulation;
+  animation: pulse-emergency 2s infinite;
+}
+
+@keyframes pulse-emergency {
+  0%, 100% {
+    box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 35px rgba(244, 67, 54, 0.6);
+  }
+}
+
+.emergency-btn:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+
+.emergency-btn:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 20px 12px;
+  }
+
+  .app-header h1 {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .app-main {
+    padding: 16px 12px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .medicines-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .emergency-btn {
+    bottom: 20px;
+    padding: 14px 24px;
+    font-size: 18px;
+    min-width: 180px;
+  }
+
+  .tab {
+    padding: 12px;
+    font-size: 13px;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding-bottom: 90px;
+  }
+
+  .app-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 8px;
+  }
+
+  .app-header h1 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+  }
+
+  .lang-toggle {
+    min-width: 55px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .app-main {
+    padding: 12px 8px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .medicines-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .empty-state,
+  .all-done {
+    padding: 40px 16px;
+  }
+
+  .empty-icon,
+  .done-icon {
+    font-size: 60px;
+  }
+
+  .emergency-btn {
+    bottom: 16px;
+    padding: 12px 20px;
+    font-size: 16px;
+    min-width: 160px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #root {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  }
+
+  .app-header {
+    background: linear-gradient(135deg, #4c3f9e 0%, #5a3d7f 100%);
+  }
+
+  .medicines-section,
+  .empty-state,
+  .all-done {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+  }
+
+  .section-title {
+    color: #ffffff;
+  }
+
+  .empty-text,
+  .done-text {
+    color: #b0b0b0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emergency-btn {
+    animation: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Tab Navigation */
+.app-tabs {
+  display: flex;
+  gap: 0;
+  background: white;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab {
+  flex: 1;
+  min-width: 120px;
+  padding: 16px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  background: #f9f9f9;
+  color: #333;
+}
+
+.tab.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  background: #f0f2ff;
+}
+
+.tab:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .app-tabs {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .tab {
+    padding: 10px 8px;
+    font-size: 12px;
+    min-width: 80px;
+  }
+}

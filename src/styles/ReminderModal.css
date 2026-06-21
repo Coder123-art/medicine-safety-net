@@ -1,0 +1,382 @@
+/* ReminderModal.css - Large, accessible reminder modal for elderly */
+
+.reminder-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.reminder-modal {
+  background: white;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal Header */
+.modal-header {
+  text-align: center;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 16px;
+}
+
+.medicine-icon-large {
+  font-size: 80px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.modal-header h2 {
+  font-size: 28px;
+  color: #333;
+  margin: 12px 0;
+  font-weight: 700;
+}
+
+.medicine-name-modal {
+  font-size: 24px;
+  font-weight: 600;
+  color: #667eea;
+  margin: 8px 0;
+}
+
+.medicine-name-modal .hindi {
+  display: block;
+  font-size: 20px;
+  color: #666;
+  font-weight: 500;
+}
+
+.medicine-dosage {
+  font-size: 18px;
+  color: #999;
+  margin: 8px 0 0 0;
+}
+
+/* Safety Checks Section */
+.safety-checks {
+  margin-bottom: 24px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.safety-checks h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+/* Check Items */
+.check-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.check-item.passed {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.check-item.warning {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.check-item.failed {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.check-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+/* Warnings Container */
+.warnings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.warning {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.warning.high {
+  background: #ffcdd2;
+  color: #b71c1c;
+  border-left: 4px solid #b71c1c;
+  font-weight: 600;
+}
+
+.warning.medium {
+  background: #ffe0b2;
+  color: #e65100;
+  border-left: 4px solid #e65100;
+}
+
+.warning.low {
+  background: #c8e6c9;
+  color: #1b5e20;
+  border-left: 4px solid #1b5e20;
+}
+
+/* Safety Status */
+.safety-status {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.safety-status.safe {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.safety-status.unsafe {
+  background: #ffcdd2;
+  color: #b71c1c;
+  animation: pulse-warning 1s infinite;
+}
+
+@keyframes pulse-warning {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 0, 0, 0);
+  }
+}
+
+.status-icon {
+  font-size: 28px;
+}
+
+.status-text {
+  flex: 1;
+}
+
+/* Side Effects Preview */
+.side-effects-preview {
+  background: #f5f5f5;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.side-effects-preview h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.side-effects-preview p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  color: #666;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 64px;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 3px solid #ffd700;
+  outline-offset: 2px;
+}
+
+.btn-confirm {
+  background: #4caf50;
+  color: white;
+  font-size: 22px;
+}
+
+.btn-confirm:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background: #d0d0d0;
+}
+
+.btn-danger {
+  background: #f44336;
+  color: white;
+  font-size: 18px;
+}
+
+.btn-danger:hover {
+  background: #da190b;
+}
+
+.btn-danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #d0d0d0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .reminder-modal {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .medicine-icon-large {
+    font-size: 64px;
+  }
+
+  .modal-header h2 {
+    font-size: 24px;
+  }
+
+  .medicine-name-modal {
+    font-size: 20px;
+  }
+
+  .medicine-name-modal .hindi {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 14px 20px;
+    font-size: 18px;
+    min-height: 56px;
+  }
+
+  .modal-close {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+}
+
+/* Scrollbar styling */
+.reminder-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.reminder-modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.reminder-modal::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.reminder-modal::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reminder-modal {
+    animation: none;
+  }
+
+  .safety-status.unsafe {
+    animation: none;
+  }
+
+  .btn:active {
+    transform: none;
+  }
+}

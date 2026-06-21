@@ -1,0 +1,387 @@
+/* SafetyCheckScreen.css */
+
+.safety-check-screen {
+  background: white;
+  color: #333;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.safety-header {
+  text-align: center;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 16px;
+}
+
+.safety-header h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.safety-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.safety-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+}
+
+/* Left Panel - Medicine Selection */
+.safety-left {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.safety-left h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.medicine-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.med-select-btn {
+  background: white;
+  color: #333;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.med-select-btn:hover {
+  border-color: #667eea;
+  background: #f0f2ff;
+}
+
+.med-select-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.med-icon {
+  font-size: 24px;
+}
+
+.med-select-name {
+  flex: 1;
+}
+
+/* Right Panel - Checks */
+.safety-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selected-medicine-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.selected-medicine-info h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.hindi-label {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.dosage-label {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Check Sections */
+.check-section {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.check-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.food-selector,
+.medicine-selector-check {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.food-btn,
+.med-check-btn {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.food-btn:hover,
+.med-check-btn:hover {
+  border-color: #667eea;
+  background: #f0f2ff;
+}
+
+.food-btn.selected,
+.med-check-btn.selected {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.med-check-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+}
+
+.med-check-btn span:first-child {
+  font-size: 16px;
+}
+
+/* Warnings Display */
+.warnings-section {
+  background: white;
+  border: 2px solid #fff3cd;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.warnings-section.has-warnings {
+  border-color: #ffebee;
+  background: #fff5f5;
+}
+
+.warnings-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.warnings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.warning-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: white;
+}
+
+.warning-item.high {
+  background: #ffebee;
+  border-left: 4px solid #c62828;
+}
+
+.warning-item.medium {
+  background: #fff3e0;
+  border-left: 4px solid #e65100;
+}
+
+.warning-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.warning-content {
+  flex: 1;
+}
+
+.warning-message {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  color: #333;
+}
+
+.warning-item.high .warning-message {
+  color: #b71c1c;
+  font-weight: 600;
+}
+
+.warning-item.medium .warning-message {
+  color: #e65100;
+}
+
+/* Safe Message */
+.safe-message {
+  background: #e8f5e9;
+  border: 2px solid #4caf50;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.safe-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.safe-message p {
+  font-size: 16px;
+  color: #2e7d32;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Side Effects Section */
+.side-effects-section {
+  background: #f5f5f5;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.side-effects-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.side-effects-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.side-effect-item {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.side-effect-item strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.side-effect-item p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  color: #666;
+}
+
+/* Empty State */
+.safety-empty {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.safety-empty p {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .safety-content {
+    grid-template-columns: 1fr;
+  }
+
+  .safety-empty {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .safety-check-screen {
+    padding: 16px;
+  }
+
+  .safety-left h3,
+  .check-section h4 {
+    font-size: 16px;
+  }
+
+  .med-select-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .food-btn,
+  .med-check-btn {
+    font-size: 13px;
+    padding: 7px 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .safety-check-screen {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .safety-header h2 {
+    font-size: 20px;
+  }
+
+  .food-selector,
+  .medicine-selector-check {
+    gap: 6px;
+  }
+
+  .food-btn,
+  .med-check-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
