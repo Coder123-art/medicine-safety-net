@@ -209,6 +209,7 @@ src/
 ### ✅ Emergency Alerts
 - 10 symptom types with severity levels (Critical → Low)
 - Geolocation with accuracy info
+- Dual Notification System: Send alerts via SMS or Email natively
 - Family contact notification
 - Offline backup to localStorage
 
@@ -245,8 +246,7 @@ npm run build
 
 ### Future Enhancements
 - [ ] Voice input: "I have chest pain"
-- [ ] SMS/Email alerts via Firebase Cloud Functions
-- [ ] Hospital EMR integration
+- [ ] Direct Hospital EMR integration
 - [ ] Refill reminders with push notifications
 - [ ] Wearable device support
 - [ ] Doctor dashboard
