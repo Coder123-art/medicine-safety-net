@@ -219,6 +219,12 @@ const ContactCard = ({ contact, onDelete, onEdit }) => {
           onChange={(e) => handleEditChange('phone', e.target.value)}
           placeholder="Phone"
         />
+        <input
+          type="email"
+          value={editData.email || ''}
+          onChange={(e) => handleEditChange('email', e.target.value)}
+          placeholder="Email"
+        />
         <select
           value={editData.relation}
           onChange={(e) => handleEditChange('relation', e.target.value)}

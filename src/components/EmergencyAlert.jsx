@@ -56,10 +56,7 @@ export const EmergencyAlert = ({ medicines = [], onClose = () => {} }) => {
     );
   };
 
-  const handleSendAlert = async () => {
-    setIsSending(true);
-
-    // Read today's medicines from the correct nested storage format
+  const generateAlertData = () => {
     const today = new Date().toDateString();
     const allDoses = JSON.parse(localStorage.getItem('medicine_safety_net_doses') || '{}');
     const todayRaw = allDoses[today] || {};
@@ -68,7 +65,7 @@ export const EmergencyAlert = ({ medicines = [], onClose = () => {} }) => {
       return Array.isArray(val) ? val.length > 0 : val > 0;
     });
 
-    const alert_message = {
+    return {
       timestamp: new Date().toISOString(),
       user_location: location
         ? `${location.latitude.toFixed(5)}, ${location.longitude.toFixed(5)}`
@@ -81,38 +78,49 @@ export const EmergencyAlert = ({ medicines = [], onClose = () => {} }) => {
       medicines_taken_today: todaysMedicineIds,
       family_contacts_notified: familyContacts.length,
     };
+  };
 
-    // Simulate sending to backend/Firebase
-    console.log('Emergency Alert:', alert_message);
+  const saveAlertAndShowSent = async (alert_message) => {
+    setIsSending(true);
+    const alerts = JSON.parse(localStorage.getItem('emergency_alerts') || '[]');
+    alerts.push(alert_message);
+    localStorage.setItem('emergency_alerts', JSON.stringify(alerts));
+    
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    setStep('sent');
+    setTimeout(() => {
+      onClose();
+    }, 3000);
+  };
 
-    // In production, this would call Firebase Cloud Function
-    try {
-      // Save to localStorage as backup
-      const alerts = JSON.parse(localStorage.getItem('emergency_alerts') || '[]');
-      alerts.push(alert_message);
-      localStorage.setItem('emergency_alerts', JSON.stringify(alerts));
-
-      // Open native SMS app
-      const smsBody = `EMERGENCY ALERT: I am feeling unwell.\nSymptoms: ${alert_message.symptoms.join(', ')}${customSymptom ? ` (${customSymptom})` : ''}.\nLocation: ${alert_message.user_location}\nPlease check on me immediately.`;
-      const phoneNumbers = familyContacts.map(c => c.phone).join(',');
-      
-      if (phoneNumbers) {
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        const separator = isIOS ? '&' : '?';
-        window.location.href = `sms:${phoneNumbers}${separator}body=${encodeURIComponent(smsBody)}`;
-      }
-
-      // Simulate API call delay for UI feedback
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      setStep('sent');
-      setTimeout(() => {
-        onClose();
-      }, 3000);
-    } catch (error) {
-      console.error('Failed to send alert:', error);
-      setIsSending(false);
+  const handleSendSMS = async () => {
+    const alert_message = generateAlertData();
+    const smsBody = `EMERGENCY ALERT: I am feeling unwell.\nSymptoms: ${alert_message.symptoms.join(', ')}${customSymptom ? ` (${customSymptom})` : ''}.\nLocation: ${alert_message.user_location}\nPlease check on me immediately.`;
+    const phoneNumbers = familyContacts.map(c => c.phone).filter(Boolean).join(',');
+    
+    if (phoneNumbers) {
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      const separator = isIOS ? '&' : '?';
+      window.location.href = `sms:${phoneNumbers}${separator}body=${encodeURIComponent(smsBody)}`;
+    } else {
+      alert("No phone numbers found for your family contacts. Please add them in the Family tab.");
+      return;
     }
+    await saveAlertAndShowSent(alert_message);
+  };
+
+  const handleSendEmail = async () => {
+    const alert_message = generateAlertData();
+    const emailBody = `EMERGENCY ALERT: I am feeling unwell.\n\nSymptoms: ${alert_message.symptoms.join(', ')}${customSymptom ? ` (${customSymptom})` : ''}.\nLocation: ${alert_message.user_location}\n\nMedicines taken today: ${medicines.map(m => m.name).join(', ') || 'None'}\n\nPlease check on me immediately.\n\nSent from Medicine Safety Net.`;
+    const emails = familyContacts.map(c => c.email).filter(e => e && e.trim() !== '').join(',');
+    
+    if (emails) {
+      window.location.href = `mailto:${emails}?subject=EMERGENCY ALERT&body=${encodeURIComponent(emailBody)}`;
+    } else {
+      alert("No email addresses found for your family contacts. Please add them in the Family tab.");
+      return;
+    }
+    await saveAlertAndShowSent(alert_message);
   };
 
   if (step === 'symptoms') {
@@ -254,18 +262,27 @@ export const EmergencyAlert = ({ medicines = [], onClose = () => {} }) => {
               )}
             </div>
 
-            <div className="modal-buttons">
+            <div className="modal-buttons" style={{ flexDirection: 'column', gap: '10px' }}>
               <button
                 className="btn btn-danger"
-                onClick={handleSendAlert}
+                onClick={handleSendSMS}
                 disabled={isSending}
               >
-                {isSending ? '⏳ Sending...' : '🚨 Send Emergency Alert'}
+                {isSending ? '⏳ Sending...' : '📱 Send via SMS'}
+              </button>
+              <button
+                className="btn btn-emergency"
+                onClick={handleSendEmail}
+                disabled={isSending}
+                style={{ backgroundColor: '#2196f3' }}
+              >
+                {isSending ? '⏳ Sending...' : '✉️ Send via Email'}
               </button>
               <button
                 className="btn btn-cancel"
                 onClick={() => setStep('symptoms')}
                 disabled={isSending}
+                style={{ marginTop: '5px' }}
               >
                 ← Go Back
               </button>
