@@ -53,16 +53,30 @@ export const MedicineCard = ({ medicine, isUpcoming = false, onClick = () => {} 
       )}
 
       {/* Button */}
-      <button
-        className="medicine-button"
-        onClick={(e) => {
-          e.stopPropagation();
-          onClick();
-        }}
-        aria-label={`Take ${medicine.name}`}
-      >
-        {t('reminder.takeNow')}
-      </button>
+      {isUpcoming ? (
+        <button
+          className="medicine-button"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick();
+          }}
+          aria-label={`Take ${medicine.name}`}
+        >
+          {t('reminder.takeNow')}
+        </button>
+      ) : (
+        <div 
+          className="medicine-button taken"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick();
+          }}
+          aria-label={`${medicine.name} already taken`}
+          style={{ backgroundColor: '#e8f5e9', color: '#2e7d32', border: '1px solid #c8e6c9', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        >
+          ✅ Already Taken
+        </div>
+      )}
     </div>
   );
 };
