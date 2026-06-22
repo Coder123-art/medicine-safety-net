@@ -72,6 +72,12 @@ function App() {
     med => !todaysMedicines[med.id] || todaysMedicines[med.id] === 0
   );
 
+  const getCurrentDate = () => {
+    return new Date().toLocaleDateString('en-US', { 
+      weekday: 'long', month: 'long', day: 'numeric' 
+    });
+  };
+
   // Get taken medicines
   const takenMedicines = medicinesData.medicines.filter(
     med => todaysMedicines[med.id] && todaysMedicines[med.id] > 0
@@ -139,7 +145,12 @@ function App() {
             {/* Upcoming Medicines Section */}
             {upcomingMedicines.length > 0 && (
               <section className="medicines-section">
-                <h2 className="section-title">📋 {t('nav.medicines')} to take today</h2>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', marginBottom: '15px' }}>
+                  <h2 className="section-title" style={{ margin: 0 }}>📋 {t('nav.medicines')} to take today</h2>
+                  <span style={{ backgroundColor: '#e3f2fd', color: '#1976d2', padding: '4px 12px', borderRadius: '20px', fontSize: '0.9em', fontWeight: '500' }}>
+                    {getCurrentDate()} • {upcomingMedicines.length} remaining
+                  </span>
+                </div>
                 <div className="medicines-grid">
                   {upcomingMedicines.map(medicine => (
                     <MedicineCard 
