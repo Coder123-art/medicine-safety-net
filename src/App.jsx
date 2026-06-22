@@ -171,7 +171,11 @@ function App() {
                 <div className="medicines-grid">
                   {takenMedicines.map(medicine => (
                     <div key={medicine.id}>
-                      <MedicineCard medicine={medicine} isUpcoming={false} />
+                      <MedicineCard 
+                        medicine={medicine} 
+                        isUpcoming={false} 
+                        onClick={() => handleMedicineClick(medicine)}
+                      />
                     </div>
                   ))}
                 </div>
