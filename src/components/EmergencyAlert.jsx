@@ -92,7 +92,17 @@ export const EmergencyAlert = ({ medicines = [], onClose = () => {} }) => {
       alerts.push(alert_message);
       localStorage.setItem('emergency_alerts', JSON.stringify(alerts));
 
-      // Simulate API call delay
+      // Open native SMS app
+      const smsBody = `EMERGENCY ALERT: I am feeling unwell.\nSymptoms: ${alert_message.symptoms.join(', ')}${customSymptom ? ` (${customSymptom})` : ''}.\nLocation: ${alert_message.user_location}\nPlease check on me immediately.`;
+      const phoneNumbers = familyContacts.map(c => c.phone).join(',');
+      
+      if (phoneNumbers) {
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const separator = isIOS ? '&' : '?';
+        window.location.href = `sms:${phoneNumbers}${separator}body=${encodeURIComponent(smsBody)}`;
+      }
+
+      // Simulate API call delay for UI feedback
       await new Promise(resolve => setTimeout(resolve, 1500));
 
       setStep('sent');

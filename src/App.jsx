@@ -128,9 +128,12 @@ function App() {
                 <h2 className="section-title">📋 {t('nav.medicines')} to take today</h2>
                 <div className="medicines-grid">
                   {upcomingMedicines.map(medicine => (
-                    <div key={medicine.id} onClick={() => handleMedicineClick(medicine)}>
-                      <MedicineCard medicine={medicine} isUpcoming={true} />
-                    </div>
+                    <MedicineCard 
+                      key={medicine.id}
+                      medicine={medicine} 
+                      isUpcoming={true}
+                      onClick={() => handleMedicineClick(medicine)}
+                    />
                   ))}
                 </div>
               </section>
@@ -215,7 +218,7 @@ function App() {
       {/* Emergency Alert Modal */}
       {showEmergencyAlert && (
         <EmergencyAlert 
-          medicines={medicinesData.medicines}
+          medicines={takenMedicines}
           onClose={() => setShowEmergencyAlert(false)}
         />
       )}
