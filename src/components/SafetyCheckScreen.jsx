@@ -77,7 +77,7 @@ export const SafetyCheckScreen = ({ medicines, foodDatabase = {} }) => {
         <div className="safety-left">
           <h3>📋 Select Medicine</h3>
           <div className="medicine-selector">
-            {medicines.map(med => (
+            {[...medicines].sort((a, b) => a.name.localeCompare(b.name)).map(med => (
               <button
                 key={med.id}
                 className={`med-select-btn ${selectedMedicine?.id === med.id ? 'active' : ''}`}
@@ -132,8 +132,9 @@ export const SafetyCheckScreen = ({ medicines, foodDatabase = {} }) => {
             <div className="check-section">
               <h4>💊 Other Medicines Taken</h4>
               <div className="medicine-selector-check">
-                {medicines
+                {[...medicines]
                   .filter(m => m.id !== selectedMedicine.id)
+                  .sort((a, b) => a.name.localeCompare(b.name))
                   .map(med => (
                     <button
                       key={med.id}
