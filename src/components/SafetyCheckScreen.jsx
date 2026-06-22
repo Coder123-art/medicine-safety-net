@@ -9,6 +9,7 @@ export const SafetyCheckScreen = ({ medicines, foodDatabase = {} }) => {
   const [takenMedicines, setTakenMedicines] = useState([]);
   const [recentFoods, setRecentFoods] = useState([]);
   const [warnings, setWarnings] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const commonFoods = [
     'milk', 'dairy', 'coffee', 'tea', 'spinach', 'broccoli', 'banana', 
@@ -76,8 +77,19 @@ export const SafetyCheckScreen = ({ medicines, foodDatabase = {} }) => {
         {/* Left: Medicine Selection */}
         <div className="safety-left">
           <h3>📋 Select Medicine</h3>
+          <div className="search-box" style={{ marginBottom: '15px' }}>
+            <input 
+              type="text" 
+              placeholder="Search medicine..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #ccc', fontSize: '16px' }}
+            />
+          </div>
           <div className="medicine-selector">
-            {[...medicines].sort((a, b) => a.name.localeCompare(b.name)).map(med => (
+            {[...medicines]
+              .filter(m => m.name.toLowerCase().includes(searchQuery.toLowerCase()) || m.hindi.includes(searchQuery))
+              .sort((a, b) => a.name.localeCompare(b.name)).map(med => (
               <button
                 key={med.id}
                 className={`med-select-btn ${selectedMedicine?.id === med.id ? 'active' : ''}`}

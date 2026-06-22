@@ -89,6 +89,20 @@ function App() {
           <button className="demo-btn" onClick={() => setShowDemo(true)} title="Start interactive demo">
             🎬 Demo
           </button>
+          <button 
+            className="demo-btn" 
+            style={{ backgroundColor: '#ff5252', marginLeft: '8px' }}
+            title="Reset today's medicines for demo testing"
+            onClick={() => {
+              const today = new Date().toDateString();
+              const data = JSON.parse(localStorage.getItem('medicine_safety_net_doses') || '{}');
+              delete data[today];
+              localStorage.setItem('medicine_safety_net_doses', JSON.stringify(data));
+              setTodaysMedicines({});
+            }}
+          >
+            🔄 Reset
+          </button>
           <button className="lang-toggle" onClick={toggleLanguage} title="Cycle through languages">
             {getLanguageLabel()}
           </button>
